@@ -9,8 +9,9 @@ ___
 <br/>
 
 - [Introduction](#Introduction)
-- [GroqCloud console](#GroqCloud-console)
+- [Groq cloud console](#Groq-cloud-console)
     - [Get a key](Get-a-key)
+    - [Settings](Settings)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -28,7 +29,7 @@ For more details on GroqCloud's offerings, visit the [official GroqCloud documen
 
 <br/>
 
-# GroqCloud console
+# Groq cloud console
 
 <br/>
 
@@ -46,6 +47,12 @@ Due to the fact that there can be many parameters and not all of them are requir
 >
 >var GroqCloud := TGroqFactory.CreateInstance(API_KEY);
 >```
+
+<br/>
+
+## Settings
+
+You can access your GroqCloud account settings to view your payment information, usage, limits, logs, teams, and profile by following [this link](https://console.groq.com/settings).
 
 <br/>
 
