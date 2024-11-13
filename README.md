@@ -22,6 +22,8 @@ Welcome to the unofficial **GroqCloud API Wrapper** for **Delphi**. This project
 
 **GroqCloud** offers a high-performance, efficient platform optimized for running large language models via its proprietary Language Processing Units (LPUs), delivering speed and energy efficiency that surpass traditional GPUs. This wrapper simplifies access to these models, allowing you to leverage **GroqCloud's** cutting-edge infrastructure without the overhead of managing the underlying hardware.
 
+For more details on GroqCloud's offerings, visit the [official GroqCloud documentation](https://groq.com/groqcloud/).
+
 <br/>
 
 # Contributing
