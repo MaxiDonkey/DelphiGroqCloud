@@ -34,8 +34,6 @@ For more details on GroqCloud's offerings, visit the [official GroqCloud documen
 
 # Groq cloud console
 
-<br/>
-
 ## Get a key
 
 To initialize the API instance, you need to obtain an [API key](https://console.groq.com/keys) from GroqCloud.
@@ -60,8 +58,6 @@ You can access your GroqCloud account settings to view your payment information,
 <br/>
 
 # Usage
-
-<br/>
 
 ## Asynchronous callback mode management
 
