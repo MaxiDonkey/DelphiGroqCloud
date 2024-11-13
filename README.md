@@ -186,7 +186,7 @@ If JSON generation fails, `Groq` will respond with a **400 error**, specifying `
 
 1. **Generation Synchronously text example :**
 
-The `GroqClous` API allows for text generation using various inputs, like text and images. It's versatile and can support a wide array of applications, including: <br/>
+The `GroqCloud` API allows for text generation using various inputs, like text and images. It's versatile and can support a wide array of applications, including: <br/>
 
 - Creative writing
 - Text completion
