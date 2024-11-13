@@ -14,6 +14,7 @@ ___
     - [Settings](Settings)
 - [Usage](#Usage)
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
+    - [Groq models overview](#Groq-models-overview)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -91,6 +92,57 @@ For methods requiring streaming, callbacks use the generic record `TAsynStreamCa
 ```
 
 The name of each property is self-explanatory; if needed, refer to the internal documentation for more details.
+
+<br/>
+
+## Groq models overview
+
+GroqCloud currently supports the [following models](https://console.groq.com/docs/models).
+
+Hosted models can be accessed directly via the GroqCloud Models API endpoint by using the model IDs listed above. To retrieve a JSON list of all available models, use the endpoint at https://api.groq.com/openai/v1/models.
+
+1. **Synchronously**
+
+```Pascal
+// uses Groq, Groq.Models;
+
+  var Models := GroqCloud.Models.List;
+  try
+    for var Item in Models.Data do
+      WriteLn(Item.Id);
+  finally
+    Models.Free;
+  end;
+```
+
+2. **Asynchronously**
+
+```Pascal
+// uses Groq, Groq.Models;
+
+  GroqCloud.Models.AsynList(
+    function : TAsynModels
+    begin
+      Result.Sender := Memo1; //Set a TMemo on the form
+      Result.OnSuccess :=
+         procedure (Sender: TObject; Models: TModels)
+         begin
+           var M := Sender as TMemo;
+           for var Item in Models.Data do
+             begin
+               M.Lines.Text := M.Text + Item.Id + sLineBreak;
+               M.Perform(WM_VSCROLL, SB_BOTTOM, 0);
+             end;
+         end;
+      Result.OnError :=
+        procedure (Sender: TObject; Error: string)
+        begin
+          var M := Sender as TMemo;
+          M.Lines.Text := M.Text + Error + sLineBreak;
+          M.Perform(WM_VSCROLL, SB_BOTTOM, 0);
+        end;
+    end);
+```
 
 <br/>
 
