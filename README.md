@@ -9,6 +9,8 @@ ___
 <br/>
 
 - [Introduction](#Introduction)
+- [GroqCloud console](#GroqCloud-console)
+    - [Get a key](Get-a-key)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -23,6 +25,27 @@ Welcome to the unofficial **GroqCloud API Wrapper** for **Delphi**. This project
 **GroqCloud** offers a high-performance, efficient platform optimized for running large language models via its proprietary Language Processing Units (LPUs), delivering speed and energy efficiency that surpass traditional GPUs. This wrapper simplifies access to these models, allowing you to leverage **GroqCloud's** cutting-edge infrastructure without the overhead of managing the underlying hardware.
 
 For more details on GroqCloud's offerings, visit the [official GroqCloud documentation](https://groq.com/groqcloud/).
+
+<br/>
+
+# GroqCloud console
+
+<br/>
+
+## Get a key
+
+To initialize the API instance, you need to obtain an [API key](https://console.groq.com/keys) from GroqCloud.
+
+Once you have a token, you can initialize `IGroq` interface, which is an entry point to the API.
+
+Due to the fact that there can be many parameters and not all of them are required, they are configured using an anonymous function.
+
+> [!NOTE]
+>```Pascal
+>uses Groq;
+>
+>var GroqCloud := TGroqFactory.CreateInstance(API_KEY);
+>```
 
 <br/>
 
