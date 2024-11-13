@@ -180,6 +180,12 @@ If JSON generation fails, `Groq` will respond with a **400 error**, specifying `
 
 <br/>
 
+>[!NOTE]
+> We will use only Meta models in all the examples provided for text generation.
+>
+
+<br/>
+
 # Contributing
 
 Pull requests are welcome. If you're planning to make a major change, please open an issue first to discuss your proposed changes.
