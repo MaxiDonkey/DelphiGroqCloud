@@ -15,7 +15,7 @@ ___
 <br/>
 <br/>
 
-## Introduction
+# Introduction
 
 Welcome to the unofficial **GroqCloud API Wrapper** for **Delphi**. This project provides a **Delphi** interface for accessing and interacting with the powerful language models available on **GroqCloud**, including those developed by **`Meta`** <sub>LLama</sub>, **`OpenAI`** <sub>Whisper</sub>, **`MistralAI`** <sub>mixtral</sub>, and **`Google`** <sub>Gemma</sub>. With this library, you can seamlessly integrate state-of-the-art language generation, chat and vision capabilities, code generation, or speech-to-text transcription into your **Delphi** applications.
 
@@ -23,11 +23,11 @@ Welcome to the unofficial **GroqCloud API Wrapper** for **Delphi**. This project
 
 <br/>
 
-## Contributing
+# Contributing
 
 Pull requests are welcome. If you're planning to make a major change, please open an issue first to discuss your proposed changes.
 
-## License
+# License
 
 This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
 
