@@ -17,7 +17,7 @@ ___
 
 ## Introduction
 
-Welcome to the unofficial **GroqCloud API Wrapper** for `Delphi`. This project provides a `Delphi` interface for accessing and interacting with the powerful language models available on **GroqCloud**, including those developed by `**Meta**` (LLama), `**OpenAI**` (Whisper), `**MistralAI**` (mixtral), and `**Google**` (Gemma). With this library, you can seamlessly integrate state-of-the-art language generation, chat and vision capabilities, code generation, or speech-to-text transcription into your `Delphi` applications.
+Welcome to the unofficial **GroqCloud API Wrapper** for `Delphi`. This project provides a `Delphi` interface for accessing and interacting with the powerful language models available on **GroqCloud**, including those developed by **`Meta`** (LLama), `**OpenAI**` (Whisper), `**MistralAI**` (mixtral), and `**Google**` (Gemma). With this library, you can seamlessly integrate state-of-the-art language generation, chat and vision capabilities, code generation, or speech-to-text transcription into your `Delphi` applications.
 
 **GroqCloud** offers a high-performance, efficient platform optimized for running large language models via its proprietary Language Processing Units (LPUs), delivering speed and energy efficiency that surpass traditional GPUs. This wrapper simplifies access to these models, allowing you to leverage **GroqCloud's** cutting-edge infrastructure without the overhead of managing the underlying hardware.
 
