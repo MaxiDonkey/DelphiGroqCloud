@@ -17,6 +17,7 @@ ___
     - [Groq models overview](#Groq-models-overview)
     - [Embeddings](#Embeddings)
     - [Text generation](#Text-generation)
+        - [Chat Completion](#Chat-Completion)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -146,13 +147,33 @@ Hosted models can be accessed directly via the GroqCloud Models API endpoint by 
 
 ## Embeddings
 
-GroqCloud does not provide any solutions for text integration.
+**GroqCloud** does not provide any solutions for text integration.
 
 <br/>
 
 ## Text generation
 
+### Chat Completion
 
+The Groq Chat Completions API interprets a series of messages and produces corresponding response outputs. These models can handle either multi-turn conversations or single-interaction tasks.
+
+JSON Mode (Beta) JSON mode is currently in beta and ensures that all chat completions are in valid JSON format.
+
+**How to Use:**
+  1. Include `"response_format": {"type": "json_object"}` in your chat completion request.
+  2. In the system prompt, specify the structure of the desired JSON output (see sample system prompts below).
+
+**Best Practices for Optimal Beta Performance:**
+- For JSON generation, Mixtral is the most effective model, followed by Gemma, and then Llama.
+- Use pretty-printed JSON for better readability over compact JSON.
+- Keep prompts as concise as possible.
+
+**Beta Limitations:**
+- Streaming is not supported.
+- Stop sequences are not supported.
+
+**Error Code:**
+If JSON generation fails, `Groq` will respond with a **400 error**, specifying `json_validate_failed` as the error code.
 
 <br/>
 
