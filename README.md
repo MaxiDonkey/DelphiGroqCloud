@@ -163,15 +163,18 @@ JSON Mode (Beta) JSON mode is currently in beta and ensures that all chat comple
   1. Include `"response_format": {"type": "json_object"}` in your chat completion request.
   2. In the system prompt, specify the structure of the desired JSON output (see sample system prompts below).
 <br/>
+
 **Best Practices for Optimal Beta Performance:** <br/>
 - For JSON generation, Mixtral is the most effective model, followed by Gemma, and then Llama.
 - Use pretty-printed JSON for better readability over compact JSON.
 - Keep prompts as concise as possible.
 <br/>
+
 **Beta Limitations:** <br/>
 - Streaming is not supported.
 - Stop sequences are not supported.
 <br/>
+
 **Error Code:** <br/>
 If JSON generation fails, `Groq` will respond with a **400 error**, specifying `json_validate_failed` as the error code.
 
