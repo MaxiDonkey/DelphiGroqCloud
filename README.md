@@ -195,7 +195,7 @@ The `GroqClous` API allows for text generation using various inputs, like text a
 - Any custom use cases you have in mind
 
 In the examples below, we'll use the 'Display' procedures to make things simpler.
->[!TOP]
+>[!TIP]
 >```Pascal
 >procedure Display(Sender: TObject; Value: string);
 >begin
