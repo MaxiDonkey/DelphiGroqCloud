@@ -15,6 +15,8 @@ ___
 - [Usage](#Usage)
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
     - [Groq models overview](#Groq-models-overview)
+    - [Embeddings](#Embeddings)
+    - [Text generation](#Text-generation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -139,6 +141,18 @@ Hosted models can be accessed directly via the GroqCloud Models API endpoint by 
         end;
     end);
 ```
+
+<br/>
+
+## Embeddings
+
+GroqCloud does not provide any solutions for text integration.
+
+<br/>
+
+## Text generation
+
+
 
 <br/>
 
