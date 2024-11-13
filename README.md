@@ -12,6 +12,8 @@ ___
 - [Groq cloud console](#Groq-cloud-console)
     - [Get a key](Get-a-key)
     - [Settings](Settings)
+- [Usage](#Usage)
+    - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -53,6 +55,42 @@ Due to the fact that there can be many parameters and not all of them are requir
 ## Settings
 
 You can access your GroqCloud account settings to view your payment information, usage, limits, logs, teams, and profile by following [this link](https://console.groq.com/settings).
+
+<br/>
+
+#Usage
+
+<br/>
+
+## Asynchronous callback mode management
+
+In the context of asynchronous methods, for a method that does not involve streaming, callbacks use the following generic record: `TAsynCallBack<T> = record` defined in the `Gemini.Async.Support.pas` unit. This record exposes the following properties:
+
+```Pascal
+   TAsynCallBack<T> = record
+   ... 
+       Sender: TObject;
+       OnStart: TProc<TObject>;
+       OnSuccess: TProc<TObject, T>;
+       OnError: TProc<TObject, string>; 
+```
+<br/>
+
+For methods requiring streaming, callbacks use the generic record `TAsynStreamCallBack<T> = record`, also defined in the `Gemini.Async.Support.pas` unit. This record exposes the following properties:
+
+```Pascal
+   TAsynCallBack<T> = record
+   ... 
+       Sender: TObject;
+       OnStart: TProc<TObject>;
+       OnSuccess: TProc<TObject, T>;
+       OnProgress: TProc<TObject, T>;
+       OnError: TProc<TObject, string>;
+       OnCancellation: TProc<TObject>;
+       OnDoCancel: TFunc<Boolean>;
+```
+
+The name of each property is self-explanatory; if needed, refer to the internal documentation for more details.
 
 <br/>
 
