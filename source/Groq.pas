@@ -77,8 +77,21 @@ type
     /// An instance of TChatRoute for chat-related operations.
     /// </returns>
     property Chat: TChatRoute read GetChatRoute;
-    // TODO
+    /// <summary>
+    /// Provides access to the models API.
+    /// Allows for retrieving and managing available models.
+    /// </summary>
+    /// <returns>
+    /// An instance of TModelsRoute for model-related operations.
+    /// </returns>
     property Models: TModelsRoute read GetModelsRoute;
+    /// <summary>
+    /// Provides access to the audio API.
+    /// Allows for speech transcription or translation.
+    /// </summary>
+    /// <returns>
+    /// An instance of TAudioRoute for audio-related operations.
+    /// </returns>
     property Audio: TAudioRoute read GetAudioRoute;
   end;
 
@@ -108,6 +121,14 @@ type
     /// <returns>
     /// An instance of <see cref="IGroq"/> initialized with the provided API token and header option.
     /// </returns>
+    /// <remarks>
+    /// Code example
+    /// <code>
+    /// var GroqCloud := TGroqFactory.CreateInstance(BaererKey);
+    ///
+    /// </code>
+    /// WARNING : Please take care to adjust the SCOPE of the <c>GroqCloud</c> interface in you application.
+    /// </remarks>
     class function CreateInstance(const AToken: string): IGroq;
   end;
 
@@ -181,8 +202,22 @@ type
     /// An instance of TChatRoute for chat-related operations.
     /// </returns>
     property Chat: TChatRoute read GetChatRoute;
-    // TODO
+    /// <summary>
+    /// Provides access to the models API.
+    /// Allows for retrieving and managing available models.
+    /// </summary>
+    /// <returns>
+    /// An instance of TModelsRoute for model-related operations.
+    /// </returns>
     property Models: TModelsRoute read GetModelsRoute;
+    /// <summary>
+    /// Provides access to the audio API.
+    /// Allows for speech transcription or translation.
+    /// </summary>
+    /// <returns>
+    /// An instance of TAudioRoute for audio-related operations.
+    /// </returns>
+    property Audio: TAudioRoute read GetAudioRoute;
   public
     /// <summary>
     /// Initializes a new instance of the <see cref="TGroq"/> class with optional header configuration.
