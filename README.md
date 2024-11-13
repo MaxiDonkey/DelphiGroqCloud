@@ -184,6 +184,53 @@ If JSON generation fails, `Groq` will respond with a **400 error**, specifying `
 > We will use only Meta models in all the examples provided for text generation.
 >
 
+1. **Generation Synchronously text example :**
+
+The `GroqClous` API allows for text generation using various inputs, like text and images. It's versatile and can support a wide array of applications, including: <br/>
+
+- Creative writing
+- Text completion
+- Summarizing open-ended text
+- Chatbot development
+- Any custom use cases you have in mind
+
+In the examples below, we'll use the 'Display' procedures to make things simpler.
+>[!TOP]
+>```Pascal
+>procedure Display(Sender: TObject; Value: string);
+>begin
+>  var M := Sender as TMemo;
+>  M.Lines.Text := M.Text + Value + sLineBreak;
+>  M.Perform(WM_VSCROLL, SB_BOTTOM, 0);
+>end;
+>```
+>
+>```Pascal
+>procedure Display(Sender: TObject; Chat: TChat);
+>begin
+>  for var Choice in Chat.Choices do
+>    Display(Sender, Choice.Message.Content);
+>end;
+>```
+
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  var Chat := GroqCloud.Chat.Create(
+    procedure (Params: TChatParams)
+    begin
+      Params.Messages([TPayload.User('Explain the importance of fast language models')]);
+      Params.Model('llama-3.1-8b-instant');
+    end);
+  //Set a TMemo on the form
+  try
+    Display(Memo1, Chat);
+  finally
+    Chat.Free;
+  end;
+```
+
 <br/>
 
 # Contributing
