@@ -35,6 +35,7 @@ ___
             - [Limitations](#Limitations)
     - [Speech](#Speech)
         - [Supported models](#Supported-models) 
+        - [Transcription code example](#Transcription-code-example)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -223,7 +224,7 @@ The `GroqCloud` API allows for text generation using various inputs, like text a
 In the examples below, we'll use the `Display` procedures to make things simpler.
 >[!TIP]
 >```Pascal
->procedure Display(Sender: TObject; Value: string);
+>procedure Display(Sender: TObject; Value: string); overload;
 >begin
 >  var M := Sender as TMemo;
 >  M.Lines.Text := M.Text + Value + sLineBreak;
@@ -232,7 +233,7 @@ In the examples below, we'll use the `Display` procedures to make things simpler
 >```
 >
 >```Pascal
->procedure Display(Sender: TObject; Chat: TChat);
+>procedure Display(Sender: TObject; Chat: TChat); overload;
 >begin
 >  for var Choice in Chat.Choices do
 >    Display(Sender, Choice.Message.Content);
@@ -288,7 +289,7 @@ In the examples below, we'll use the `Display` procedures to make things simpler
 In the examples below, we'll use the `Display` procedures to make things simpler.
 >[!TIP]
 >```Pascal
->procedure DisplayStream(Sender: TObject; Value: string);
+>procedure DisplayStream(Sender: TObject; Value: string); overload;
 >begin
 >  var M := Sender as TMemo;
 >  for var index := 1 to Value.Length  do
@@ -581,6 +582,36 @@ Groq API delivers the fastest speech-to-text solution on the market, featuring O
 ### Supported models
 
 The APIs leverage OpenAI’s Whisper models, along with the fine-tuned `distil-whisper-large-v3-en` model available on Hugging Face (English only). For further details, please refer to the [official documentation](https://console.groq.com/docs/speech-text#supported-models).
+
+<br/>
+
+### Transcription code example
+
+>[!TIP]
+>```Pascal
+> procedure Display(Sender: TObject; Transcription: TAudioText); overload;
+>begin
+>  Display(Sender, Transcription.Text);
+>end;
+>```
+>
+
+```Pascal
+// uses Groq, Groq.Chat, Groq.Audio;
+
+  GroqCloud.Audio.ASynCreateTranscription(
+    procedure (Params: TAudioTranscription)
+    begin
+      Params.Model('whisper-large-v3-turbo');
+      Params.&File('Z:\My_Foolder\Sound\sound.mp3');
+    end,
+    function : TAsynAudioText
+    begin
+      Result.Sender := Memo1;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
 
 <br/>
 
