@@ -19,6 +19,7 @@ ___
     - [Text generation](#Text-generation)
         - [Chat Completion](#Chat-Completion)
              - [Synchronously text generation example](#Synchronously-text-generation-example)
+             - [Asynchronously text generation example](#Asynchronously-text-generation-example)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -185,6 +186,8 @@ If JSON generation fails, `Groq` will respond with a **400 error**, specifying `
 > We will use only Meta models in all the examples provided for text generation.
 >
 
+<br/>
+
 #### Synchronously text generation example
 
 The `GroqCloud` API allows for text generation using various inputs, like text and images. It's versatile and can support a wide array of applications, including: <br/>
@@ -230,6 +233,28 @@ In the examples below, we'll use the `Display` procedures to make things simpler
   finally
     Chat.Free;
   end;
+```
+
+<br/>
+
+#### Asynchronously text generation example
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  GroqCloud.Chat.AsynCreate(
+    procedure (Params: TChatParams)
+    begin
+      Params.Messages([TPayload.User('Explain the importance of fast language models')]);
+      Params.Model('llama-3.1-8b-instant');
+    end,
+    //Set a TMemo on the form
+    function : TAsynChat
+    begin
+      Result.Sender := Memo1;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
 ```
 
 <br/>
