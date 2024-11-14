@@ -40,7 +40,7 @@ ___
     - [Tool use](#Tool-use)
         - [How tool use works](#How-tool-use-works)
         - [Supported models](#Supported-models)
-        - [](#)
+        - [Tool use code example](#Tool-use-code-example)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -692,6 +692,68 @@ The following models powered by Groq also support tool use:
 - **`mixtral-8x7b-32768`** (parallel tool use not supported)
 - **`gemma-7b-it`** (parallel tool use not supported)
 - **`gemma2-9b-it`** (parallel tool use not supported)
+
+### Tool use code example
+
+>[!TOP]
+>```Pascal
+>procedure TMyForm.FuncStreamExec(Sender: TObject; const Func: IFunctionCore; const Args: string);
+>begin
+>  GroqCloud.Chat.AsynCreateStream(
+>    procedure (Params: TChatParams)
+>    begin
+>      Params.Messages([TPayLoad.User(Func.Execute(Args))]);
+>      Params.Model('llama-3.1-8b-instant');
+>      Params.Stream(True);
+>    end,
+>    function : TAsynChatStream
+>    begin
+>      Result.Sender := Sender;
+>      Result.OnProgress := DisplayStream;
+>      Result.OnError := DisplayStream;
+>    end);
+>end;
+>```
+
+```Pascal
+// uses Groq, Groq.Chat, Groq.Functions.Core, Groq.Functions.Example;
+
+  var Weather := TWeatherReportFunction.CreateInstance;
+  var Chat := GroqCloud.Chat.Create(
+    procedure (Params: TChatParams)
+    begin
+      Params.Messages([TPayload.User(Memo2.Text)]);
+      Params.Model('llama3-groq-70b-8192-tool-use-preview');
+      Params.Tools([Weather]);
+      Params.ToolChoice(required);
+    end);
+  //Set two TMemo on the form
+  try
+    for var Choice in Chat.Choices do
+      begin
+        if Choice.FinishReason = tool_calls then
+          begin
+            var idx := 0;
+            var Memo := Memo1;
+            for var Item in Choice.Message.ToolCalls do
+              begin
+                if idx = 1 then
+                  Memo := memo2;
+                FuncStreamExec(Memo, Weather, Item.&Function.Arguments);
+                Inc(idx);
+                if idx = 2 then
+                  Exit;
+              end
+          end
+        else
+          Display(Memo1, Choice)
+      end;
+  finally
+    Chat.Free;
+  end;
+```
+
+In this code example, if the tool returns multiple results, only the first two will be processed and displayed in each of the two TMemo, respectively.
 
 <br/>
 
