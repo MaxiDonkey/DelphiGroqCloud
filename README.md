@@ -24,6 +24,7 @@ ___
              - [Synchronously chat stream](#Synchronously-chat-stream)
              - [Asynchronously chat stream](#Asynchronously-chat-stream) 
         - [Build an interactive chat](#Build-an-interactive-chat)
+        - [System instructions](#System-instructions)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -367,6 +368,43 @@ Here’s an asynchrounly sample of a simple chat setup:
       Params.Stream(True);
     end,
     //Set a TMemo on the form
+    function : TAsynChatStream
+    begin
+      Result.Sender := Memo1;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+```
+<br/>
+
+### System instructions
+
+When configuring an AI model, you have the option to set guidelines for how it should respond. For instance, you could assign it a particular role, like "act as a mathematician," or give it instructions on tone, such as "speak like a military instructor." These guidelines are established by setting up system instructions when the model is initialized.
+
+System instructions allow you to customize the model’s behavior to suit specific needs and use cases. Once configured, they add context that helps guide the model to perform tasks more accurately according to predefined guidelines throughout the entire interaction. These instructions apply across multiple interactions with the model.
+
+System instructions can be used for several purposes, such as:
+
+- Defining a persona or role (e.g., configuring the model to function as a customer service chatbot)
+- Specifying an output format (like Markdown, JSON, or YAML)
+- Adjusting the output style and tone (such as modifying verbosity, formality, or reading level)
+- Setting goals or rules for the task (for example, providing only a code snippet without additional explanation)
+- Supplying relevant context (like a knowledge cutoff date)
+
+These instructions can be set during model initialization and will remain active for the duration of the session, guiding how the model responds. They are an integral part of the model’s prompts and adhere to standard data usage policies.
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  GroqCloud.Chat.AsynCreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama3-8b-8192');
+      Params.Messages([
+        TPayload.System('you are a rocket scientist'),
+        TPayload.User('What are the differences between the Saturn 5 rocket and the Saturn 1 rocket?') ]);
+      Params.Stream(True);
+    end,
     function : TAsynChatStream
     begin
       Result.Sender := Memo1;
