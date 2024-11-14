@@ -23,6 +23,7 @@ ___
         - [Stream chat](#Stream-chat)
              - [Synchronously chat stream](#Synchronously-chat-stream)
              - [Asynchronously chat stream](#Asynchronously-chat-stream) 
+        - [Build an interactive chat](#Build-an-interactive-chat)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -332,6 +333,40 @@ In the examples below, we'll use the `Display` procedures to make things simpler
       Params.Model('llama-3.1-70b-versatile');
       Params.Stream(True);
     end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := Memo1;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+```
+
+<br/>
+
+### Build an interactive chat
+
+You can utilize the `GroqCloud` API to build interactive chat experiences customized for your users. With the API’s chat capability, you can facilitate multiple rounds of questions and answers, allowing users to gradually work toward their solutions or get support for complex, multi-step issues. This feature is particularly valuable for applications that need ongoing interaction, like :
+- Chatbots, 
+- Educational tools
+- Customer support assistants.
+
+Here’s an asynchrounly sample of a simple chat setup:
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  GroqCloud.Chat.AsynCreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama-3.2-3b-preview');
+      Params.Messages([
+        TPayload.User('Hello'),
+        TPayload.Assistant('Great to meet you. What would you like to know?'),
+        TPayload.User('I have two dogs in my house. How many paws are in my house?')
+      ]);
+      Params.Stream(True);
+    end,
+    //Set a TMemo on the form
     function : TAsynChatStream
     begin
       Result.Sender := Memo1;
