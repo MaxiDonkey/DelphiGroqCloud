@@ -65,6 +65,7 @@ Due to the fact that there can be many parameters and not all of them are requir
 
 >[!Warning]
 > To use the examples provided in this tutorial, especially to work with asynchronous methods, I recommend defining the Gemini interface with the widest possible scope.
+><br/>
 > So, set `Gemini := TGeminiFactory.CreateInstance(My_Key);` in the `OnCreate` event of your application.
 >
 
