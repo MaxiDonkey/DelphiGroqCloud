@@ -36,6 +36,7 @@ ___
     - [Speech](#Speech)
         - [Supported models](#Supported-models) 
         - [Transcription code example](#Transcription-code-example)
+        - [Translation code example](#Translation-code-example)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -605,6 +606,7 @@ File uploads are currently limited to **25 MB** and the following input file typ
 >```
 >
 
+**Asynchronously**
 ```Pascal
 // uses Groq, Groq.Chat, Groq.Audio;
 
@@ -621,6 +623,31 @@ File uploads are currently limited to **25 MB** and the following input file typ
       Result.OnError := Display;
     end);
 ```
+
+<br/>
+
+### Translation code example
+
+**Asynchronously**
+```Pascal
+// uses Groq, Groq.Chat, Groq.Audio;
+  
+  GroqCloud.Audio.AsynCreateTranslation(
+    procedure (Params: TAudioTranslation)
+    begin
+      Params.Model('whisper-large-v3');
+      Params.&File('Z:\My_Foolder\Sound\sound.mp3');
+      Params.ResponseFormat(verbose_json);
+    end,
+    function : TAsynAudioText
+    begin
+      Result.Sender := Memo1;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+If you include a `prompt` parameter in your request, it must be written in English
 
 <br/>
 
