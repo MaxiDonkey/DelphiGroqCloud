@@ -21,7 +21,8 @@ ___
              - [Synchronously text generation example](#Synchronously-text-generation-example)
              - [Asynchronously text generation example](#Asynchronously-text-generation-example)
         - [Stream chat](#Stream-chat)
-             - [Synchronously chat stream](#Synchronously-chat-stream) 
+             - [Synchronously chat stream](#Synchronously-chat-stream)
+             - [Asynchronously chat stream](#Asynchronously-chat-stream) 
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -314,6 +315,28 @@ In the examples below, we'll use the `Display` procedures to make things simpler
     begin
       if Assigned(Chat) then
         DisplayStream(Memo1, Chat);
+    end);
+```
+
+<br/>
+
+#### Asynchronously chat stream
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  GroqCloud.Chat.AsynCreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Messages([TPayload.User('How did we come to develop thermodynamics?')]);
+      Params.Model('llama-3.1-70b-versatile');
+      Params.Stream(True);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := Memo1;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
     end);
 ```
 
