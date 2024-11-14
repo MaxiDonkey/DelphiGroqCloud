@@ -695,7 +695,7 @@ The following models powered by Groq also support tool use:
 
 ### Tool use code example
 
->[!TOP]
+>[!TIP]
 >```Pascal
 >procedure TMyForm.FuncStreamExec(Sender: TObject; const Func: IFunctionCore; const Args: string);
 >begin
