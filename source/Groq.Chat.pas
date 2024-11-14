@@ -301,6 +301,26 @@ type
   );
 
   /// <summary>
+  /// Helper record for the <c>TResponseFormat</c> enumeration, providing utility methods for converting
+  /// between <c>TResponseFormat</c> values and their string representations.
+  /// </summary>
+  TResponseFormatHelper = record helper for TResponseFormat
+    /// <summary>
+    /// Converts the <c>TResponseFormat</c> value of the specified field to a string during JSON serialization.
+    /// </summary>
+    /// <param name="Data">
+    /// The object containing the field to be converted.
+    /// </param>
+    /// <param name="Field">
+    /// The field name representing the <c>TResponseFormat</c> value.
+    /// </param>
+    /// <returns>
+    /// The string representation of the <c>TResponseFormat</c> value.
+    /// </returns>
+    function ToString: string;
+  end;
+
+  /// <summary>
   /// A class to represent and set up content parameters for chat message payloads.
   /// </summary>
   /// <remarks>
@@ -1671,7 +1691,7 @@ end;
 
 function TChatParams.MaxToken(const Value: Integer): TChatParams;
 begin
-  Result := TChatParams(Add('max_token', Value));
+  Result := TChatParams(Add('max_tokens', Value));
 end;
 
 function TChatParams.Messages(const Value: TJSONObject): TChatParams;
@@ -1701,16 +1721,7 @@ end;
 
 function TChatParams.ResponseFormat(const Value: TResponseFormat): TChatParams;
 begin
-  var JSONParam: TJSONObject := nil;
-  case Value of
-    to_text:
-      JSONParam := TJSONObject.Create.AddPair('type', 'text');
-    to_json_object:
-      JSONParam := TJSONObject.Create.AddPair('type', 'json_object');
-  end;
-  if Assigned(JSONParam) then
-    Result := TChatParams(Add('response_format', JSONParam)) else
-    Result := Self;
+  Result := TChatParams(Add('response_format', TJSONObject.Create.AddPair('type', Value.ToString)))
 end;
 
 function TChatParams.Seed(const Value: Integer): TChatParams;
@@ -2160,6 +2171,18 @@ begin
   for var Item in FToolCalls do
     Item.Free;
   inherited;
+end;
+
+{ TResponseFormatHelper }
+
+function TResponseFormatHelper.ToString: string;
+begin
+  case Self of
+    to_text:
+      Exit('text');
+    to_json_object:
+      Exit('json_object');
+  end;
 end;
 
 end.
