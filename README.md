@@ -587,6 +587,8 @@ The APIs leverage OpenAI’s Whisper models, along with the fine-tuned `distil-w
 
 ### Transcription code example
 
+File uploads are currently limited to **25 MB** and the following input file types are supported: `mp3`, `mp4`, `mpeg`, `mpga`, `m4a`, `wav`, and `webm`.
+
 >[!TIP]
 >```Pascal
 > procedure Display(Sender: TObject; Transcription: TAudioText); overload;
