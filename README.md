@@ -43,6 +43,8 @@ ___
         - [Tool use code example](#Tool-use-code-example)
         - [How to create a tool](#How-to-create-a-tool)
     - [Content moderation](#Content-moderation)
+    - [Fine-tuning](#Fine-tuning)
+    - [Methods for the tutorial display](#Methods-for-the-tutorial-display)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -804,6 +806,29 @@ The `Groq.Safety.pas` unit provides frameworks and tools for categorizing and ma
 >[!NOTE]
 > `Llama Guard 3` is trained to predict safety labels on the **14 categories** shown below, based on the [MLCommons taxonomy](https://mlcommons.org/2024/04/mlc-aisafety-v0-5-poc/) of hazards.
 >
+
+<br/>
+
+## Fine-tuning
+
+**GroqCloud** does not currently provide options for fine-tuning the available models.
+
+<br/>
+
+## Methods for the tutorial display
+
+>[!TIP]
+>```Pascal
+>  interface 
+>    procedure Display(Sender: TObject; Value: string); overload;
+>    procedure Display(Sender: TObject; Chat: TChat); overload;
+>    procedure DisplayStream(Sender: TObject; Value: string); overload;
+>    procedure DisplayStream(Sender: TObject; Chat: TChat); overload;
+>    procedure Display(Sender: TObject; Transcription: TAudioText); overload;
+>    procedure TMyForm.FuncStreamExec(Sender: TObject; const Func: IFunctionCore; const Args: string);
+>    procedure DisplayHarm(Sender: TObject; Chat: TChat);
+> ...
+>```
 
 <br/>
 
