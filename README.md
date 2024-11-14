@@ -37,6 +37,7 @@ ___
         - [Supported models](#Supported-models) 
         - [Transcription code example](#Transcription-code-example)
         - [Translation code example](#Translation-code-example)
+    - [Tool use](#Tool use)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -653,6 +654,10 @@ Refer to the [official documentation](https://console.groq.com/docs/api-referenc
 If you include a `prompt` parameter in your request, it must be written in English.
 
 Refer to the [official documentation](https://console.groq.com/docs/api-reference#audio-translation) for detailed parameters.
+
+<br/>
+
+## Tool use
 
 <br/>
 
