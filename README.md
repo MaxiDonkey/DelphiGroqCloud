@@ -661,9 +661,7 @@ Refer to the [official documentation](https://console.groq.com/docs/api-referenc
 
 ## Tool use
 
-Tool usage is a powerful feature enabling Large Language Models (LLMs) to interact with external resources like APIs, databases, and the web to access dynamic data beyond their static, pre-trained state and perform actions beyond text generation alone.
-
-This capability bridges the gap between LLMs' training data and real-time information, unlocking a wide range of applications that rely on current data and real-world actions. Combined with Groq's exceptionally fast inference speed, tool usage offers exciting possibilities for building high-performance applications in real-time.
+Tool usage empowers Large Language Models (LLMs) to interact with external resources such as APIs, databases, and the web, enabling access to live data and performing actions beyond mere text generation. This functionality bridges the gap between LLMs' static training knowledge and the need for up-to-date information, making it possible to build applications that rely on dynamic data and real-world actions. When paired with Groq’s exceptionally fast inference speeds, tool usage opens the door to high-performance, real-time applications across a range of industries.
 
 ### How tool use works
 
@@ -676,6 +674,20 @@ Refer to the [official documentation](https://console.groq.com/docs/tool-use)
 - **`llama3-groq-8b-8192-tool-use-preview`**
 
 For more details, please see the [launch announcement](https://groq.com/introducing-llama-3-groq-tool-use-models/).
+
+>[!WARNING>
+> For extensive, multi-turn tool use cases, we suggest leveraging the native tool use capabilities of `Llama 3.1 models`. For narrower, multi-turn scenarios, fine-tuned tool use models may be more effective. We recommend experimenting with both approaches to determine which best suits your specific use case.
+>
+
+Other Supported Models
+
+
+The following models powered by Groq also support tool use:
+- **`llama3-70b-8192`**
+- **`llama3-8b-8192`**
+- **`mixtral-8x7b-32768`** (parallel tool use not supported)
+- **`gemma-7b-it`** (parallel tool use not supported)
+- **`gemma2-9b-it`** (parallel tool use not supported)
 
 <br/>
 
