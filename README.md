@@ -626,6 +626,8 @@ File uploads are currently limited to **25 MB** and the following input file typ
 
 An optional text to guide the model's style or continue a previous audio segment. The `prompt` should match the audio language.
 
+Refer to the [official documentation](https://console.groq.com/docs/api-reference#audio-transcription) for detailed parameters.
+
 <br/>
 
 ### Translation code example
@@ -639,7 +641,6 @@ An optional text to guide the model's style or continue a previous audio segment
     begin
       Params.Model('whisper-large-v3');
       Params.&File('Z:\My_Foolder\Sound\sound.mp3');
-      Params.ResponseFormat(verbose_json);
     end,
     function : TAsynAudioText
     begin
@@ -650,6 +651,8 @@ An optional text to guide the model's style or continue a previous audio segment
 ```
 
 If you include a `prompt` parameter in your request, it must be written in English.
+
+Refer to the [official documentation](https://console.groq.com/docs/api-reference#audio-translation) for detailed parameters.
 
 <br/>
 
