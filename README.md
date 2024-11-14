@@ -16,7 +16,7 @@ ___
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
     - [Groq models overview](#Groq-models-overview)
     - [Embeddings](#Embeddings)
-    - [Text generation](#Text-generation)
+    - [**Text generation**](#Text-generation)
         - [Chat completion](#Chat-completion)
              - [Synchronously text generation example](#Synchronously-text-generation-example)
              - [Asynchronously text generation example](#Asynchronously-text-generation-example)
