@@ -41,6 +41,8 @@ ___
         - [How tool use works](#How-tool-use-works)
         - [Supported models](#Supported-models)
         - [Tool use code example](#Tool-use-code-example)
+        - [How to create a tool](#How-to-create-a-tool)
+    - [Content moderation](#Content-moderation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -754,6 +756,16 @@ The following models powered by Groq also support tool use:
 ```
 
 In this code example, if the tool returns multiple results, only the first two will be processed and displayed in each of the two TMemo, respectively.
+
+### How to create a tool
+
+The `Groq.Functions.Core.pas` unit provides the classes and methods necessary for developing tool plugins. Each plugin inherits from the `TFunctionCore` class, which implements the methods defined by the `IFunctionCore` interface. For guidance on creating custom functions, refer to the `Groq.Functions.Example.pas` unit, which serves as a practical example.
+
+<br/>
+
+## Content moderation
+
+GroqCloud provides access to the Llama-Guard-3-8B model template for effective text content moderation.
 
 <br/>
 
