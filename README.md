@@ -17,9 +17,10 @@ ___
     - [Groq models overview](#Groq-models-overview)
     - [Embeddings](#Embeddings)
     - [Text generation](#Text-generation)
-        - [Chat Completion](#Chat-Completion)
+        - [Chat completion](#Chat-completion)
              - [Synchronously text generation example](#Synchronously-text-generation-example)
              - [Asynchronously text generation example](#Asynchronously-text-generation-example)
+        - [Stream chat](#Stream-chat)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -155,7 +156,7 @@ Hosted models can be accessed directly via the GroqCloud Models API endpoint by 
 
 ## Text generation
 
-### Chat Completion
+### Chat completion
 
 The **Groq Chat Completions API** interprets a series of messages and produces corresponding response outputs. These models can handle either multi-turn conversations or single-interaction tasks.
 
@@ -246,7 +247,7 @@ In the examples below, we'll use the `Display` procedures to make things simpler
     procedure (Params: TChatParams)
     begin
       Params.Messages([TPayload.User('Explain the importance of fast language models')]);
-      Params.Model('llama-3.1-8b-instant');
+      Params.Model('llama-3.1-70b-versatile');
     end,
     //Set a TMemo on the form
     function : TAsynChat
@@ -256,6 +257,10 @@ In the examples below, we'll use the `Display` procedures to make things simpler
       Result.OnError := Display;
     end);
 ```
+
+<br/>
+
+### Stream chat
 
 <br/>
 
