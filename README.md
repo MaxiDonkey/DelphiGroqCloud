@@ -32,6 +32,7 @@ ___
             - [Asynchronous vision using a base64-encoded image](#Asynchronous-vision-using-a-base64-encoded-image)
             - [Asynchronous vision using an image URL](#Asynchronous-vision-using-an-image-URL)
             - [JSON Mode with Images](#JSON-Mode-with-Images)
+            - [Limitations](#Limitations)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -562,6 +563,10 @@ The llama-3.2-90b-vision-preview and llama-3.2-11b-vision-preview models now sup
       Result.OnError := Display;
     end);
 ```
+
+#### Limitations
+
+Although you can add multiple images, GroqCloud limits its vision models to a single image. As a result, it is not possible to compare multiple images.
 
 <br/>
 
