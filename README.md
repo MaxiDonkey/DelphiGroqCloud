@@ -765,7 +765,7 @@ The `Groq.Functions.Core.pas` unit provides the classes and methods necessary fo
 
 ## Content moderation
 
-GroqCloud provides access to the Llama-Guard-3-8B model template for effective text content moderation.
+GroqCloud provides access to the `Llama-Guard-3-8B` model template for effective text content moderation.
 
 
 **Moderation code example**
@@ -803,6 +803,7 @@ The `Groq.Safety.pas` unit provides frameworks and tools for categorizing and ma
 
 >[!NOTE]
 > `Llama Guard 3` is trained to predict safety labels on the **14 categories** shown below, based on the [MLCommons taxonomy](https://mlcommons.org/2024/04/mlc-aisafety-v0-5-poc/) of hazards.
+>
 
 <br/>
 
