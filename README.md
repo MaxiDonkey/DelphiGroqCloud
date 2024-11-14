@@ -413,6 +413,10 @@ These instructions can be set during model initialization and will remain active
     end);
 ```
 
+>[!CAUTION]
+> System instructions help the model follow directions, but they don't completely prevent jailbreaks or information leaks. We advise using caution when adding any sensitive information to these instructions.
+>
+
 <br/>
 
 # Contributing
