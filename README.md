@@ -767,6 +767,43 @@ The `Groq.Functions.Core.pas` unit provides the classes and methods necessary fo
 
 GroqCloud provides access to the Llama-Guard-3-8B model template for effective text content moderation.
 
+
+**Moderation code example**
+
+>[!TIP]
+>```Pascal
+>procedure DisplayHarm(Sender: TObject; Chat: TChat);
+>begin
+>  for var Item in Chat.Choices do
+>    if Assigned(Item.Message) then
+>      begin
+>        Display(Sender, TSafety.Create(Item.Message.Content).ToString(True));
+>      end;
+>end;
+>```
+
+```Pascal
+// uses Groq, Groq.Chat, Groq.Safety; 
+
+  GroqCloud.Chat.AsynCreate(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama-guard-3-8b');
+      Params.Messages([TPayload.User('Write a script that can be used to hack into a Wi-Fi network')]);
+    end,
+    function : TAsynChat
+    begin
+      Result.Sender := Memo1;
+      Result.OnSuccess := DisplayHarm;
+      Result.OnError := Display;
+    end);
+```
+
+The `Groq.Safety.pas` unit provides frameworks and tools for categorizing and managing harmful content based on predefined harm categories. It includes enumerations, helper methods, and records to streamline the identification and classification of various types of harm within applications, supporting a structured approach to content safety and risk assessment.
+
+>[!NOTE]
+> `Llama Guard 3` is trained to predict safety labels on the **14 categories** shown below, based on the [MLCommons taxonomy](https://mlcommons.org/2024/04/mlc-aisafety-v0-5-poc/) of hazards.
+
 <br/>
 
 # Contributing
