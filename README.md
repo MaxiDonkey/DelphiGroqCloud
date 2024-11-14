@@ -592,8 +592,8 @@ File uploads are currently limited to **25 MB** and the following input file typ
 - **`mp4`**
 - **`mpeg`**
 - **`mpga`**
-- **`m4a`**
-- **`wav` **
+- **`m4a`** 
+- **`wav`**
 - **`webm`**
 
 >[!TIP]
