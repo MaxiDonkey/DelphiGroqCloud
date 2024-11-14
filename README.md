@@ -33,6 +33,8 @@ ___
             - [Asynchronous vision using an image URL](#Asynchronous-vision-using-an-image-URL)
             - [JSON Mode with Images](#JSON-Mode-with-Images)
             - [Limitations](#Limitations)
+    - [Speech](#Speech)
+        - [Supported models](#Supported-models) 
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -567,6 +569,18 @@ The llama-3.2-90b-vision-preview and llama-3.2-11b-vision-preview models now sup
 #### Limitations
 
 Although you can add multiple images, GroqCloud limits its vision models to a single image. As a result, it is not possible to compare multiple images.
+
+<br/>
+
+## Speech
+
+Groq API delivers the fastest speech-to-text solution on the market, featuring OpenAI-compatible endpoints for real-time transcription and translation. With Groq API, you can seamlessly integrate high-quality audio processing into your applications, achieving speeds that approach human-level responsiveness.
+
+<br/>
+
+### Supported models
+
+The APIs leverage OpenAI’s Whisper models, along with the fine-tuned `distil-whisper-large-v3-en` model available on Hugging Face (English only). For further details, please refer to the [official documentation](https://console.groq.com/docs/speech-text#supported-models).
 
 <br/>
 
