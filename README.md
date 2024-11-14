@@ -102,7 +102,7 @@ The name of each property is self-explanatory; if needed, refer to the internal 
 
 GroqCloud currently supports the [following models](https://console.groq.com/docs/models).
 
-Hosted models can be accessed directly via the GroqCloud Models API endpoint by using the model IDs listed above. To retrieve a JSON list of all available models, use the endpoint at https://api.groq.com/openai/v1/models.
+Hosted models can be accessed directly via the GroqCloud Models API endpoint by using the model IDs listed above. To retrieve a JSON list of all available models, use the endpoint at `https://api.groq.com/openai/v1/models`.
 
 1. **Synchronously**
 
