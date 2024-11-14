@@ -16,7 +16,7 @@ ___
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
     - [Groq models overview](#Groq-models-overview)
     - [Embeddings](#Embeddings)
-    - [**Text generation**](#Text-generation)
+    - [Text generation](#Text-generation)
         - [Chat completion](#Chat-completion)
              - [Synchronously text generation example](#Synchronously-text-generation-example)
              - [Asynchronously text generation example](#Asynchronously-text-generation-example)
@@ -37,9 +37,10 @@ ___
         - [Supported models](#Supported-models) 
         - [Transcription code example](#Transcription-code-example)
         - [Translation code example](#Translation-code-example)
-    - [Tool use](#Tool use)
+    - [Tool use](#Tool-use)
         - [How tool use works](#How-tool-use-works)
         - [Supported models](#Supported-models)
+        - [](#)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -679,8 +680,11 @@ For more details, please see the [launch announcement](https://groq.com/introduc
 > For extensive, multi-turn tool use cases, we suggest leveraging the native tool use capabilities of `Llama 3.1 models`. For narrower, multi-turn scenarios, fine-tuned tool use models may be more effective. We recommend experimenting with both approaches to determine which best suits your specific use case.
 >
 
-Other Supported Models
+The following `Llama-3.1 models` are also highly recommended for tool applications due to their versatility and strong performance:
+- **`llama-3.1-70b-versatile`**
+- **`llama-3.1-8b-instant`**
 
+**Other Supported Models**
 
 The following models powered by Groq also support tool use:
 - **`llama3-70b-8192`**
