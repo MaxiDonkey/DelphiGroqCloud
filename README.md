@@ -31,6 +31,7 @@ ___
         - [How to use vision](#How-to-use-vision)
             - [Asynchronous vision using a base64-encoded image](#Asynchronous-vision-using-a-base64-encoded-image)
             - [Asynchronous vision using an image URL](#Asynchronous-vision-using-an-image-URL)
+            - [JSON Mode with Images](#JSON-Mode-with-Images)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -529,6 +530,36 @@ See the [official documentation](https://console.groq.com/docs/vision#supported-
       Result.Sender := Memo1;
       Result.OnProgress := DisplayStream;
       Result.OnError := DisplayStream;
+    end);
+```
+
+#### JSON Mode with Images
+
+The llama-3.2-90b-vision-preview and llama-3.2-11b-vision-preview models now support JSON mode! Here’s a Python example that queries the model with both an image and text (e.g., "Please extract relevant information as a JSON object.") with response_format set to JSON mode.
+
+>[!CAUTION]
+>Warning, you can't use JSON mode with a streamed response.
+>
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  var Ref := 'https://www.toureiffel.paris/themes/custom/tour_eiffel/build/images/home-discover-bg.jpg';
+  GroqCloud.Chat.AsynCreate(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama-3.2-90b-vision-preview');
+      Params.Messages([TPayload.User('List what you observe in this photo in JSON format.?', [Ref])]);
+      Params.Temperature(1);
+      Params.MaxToken(1024);
+      Params.TopP(1);
+      Params.ResponseFormat(to_json_object);
+    end,
+    function : TAsynChat
+    begin
+      Result.Sender := Memo1;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
     end);
 ```
 
