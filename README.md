@@ -825,7 +825,6 @@ The `Groq.Safety.pas` unit provides frameworks and tools for categorizing and ma
 >    procedure DisplayStream(Sender: TObject; Value: string); overload;
 >    procedure DisplayStream(Sender: TObject; Chat: TChat); overload;
 >    procedure Display(Sender: TObject; Transcription: TAudioText); overload;
->    procedure TMyForm.FuncStreamExec(Sender: TObject; const Func: IFunctionCore; const Args: string);
 >    procedure DisplayHarm(Sender: TObject; Chat: TChat);
 > ...
 >```
