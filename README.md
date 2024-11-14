@@ -675,7 +675,7 @@ Refer to the [official documentation](https://console.groq.com/docs/tool-use)
 
 For more details, please see the [launch announcement](https://groq.com/introducing-llama-3-groq-tool-use-models/).
 
->[!WARNING>
+>[!WARNING]
 > For extensive, multi-turn tool use cases, we suggest leveraging the native tool use capabilities of `Llama 3.1 models`. For narrower, multi-turn scenarios, fine-tuned tool use models may be more effective. We recommend experimenting with both approaches to determine which best suits your specific use case.
 >
 
