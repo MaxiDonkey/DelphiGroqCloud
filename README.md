@@ -38,6 +38,8 @@ ___
         - [Transcription code example](#Transcription-code-example)
         - [Translation code example](#Translation-code-example)
     - [Tool use](#Tool use)
+        - [How tool use works](#How-tool-use-works)
+        - [Supported models](#Supported-models)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -658,6 +660,22 @@ Refer to the [official documentation](https://console.groq.com/docs/api-referenc
 <br/>
 
 ## Tool use
+
+Tool usage is a powerful feature enabling Large Language Models (LLMs) to interact with external resources like APIs, databases, and the web to access dynamic data beyond their static, pre-trained state and perform actions beyond text generation alone.
+
+This capability bridges the gap between LLMs' training data and real-time information, unlocking a wide range of applications that rely on current data and real-world actions. Combined with Groq's exceptionally fast inference speed, tool usage offers exciting possibilities for building high-performance applications in real-time.
+
+### How tool use works
+
+Refer to the [official documentation](https://console.groq.com/docs/tool-use)
+
+### Supported models
+
+**Groq** has fine-tuned the following models specifically for optimized tool use, and they are now available in public preview:
+- **`llama3-groq-70b-8192-tool-use-preview`**
+- **`llama3-groq-8b-8192-tool-use-preview`**
+
+For more details, please see the [launch announcement](https://groq.com/introducing-llama-3-groq-tool-use-models/).
 
 <br/>
 
