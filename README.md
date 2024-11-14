@@ -647,7 +647,7 @@ File uploads are currently limited to **25 MB** and the following input file typ
     end);
 ```
 
-If you include a `prompt` parameter in your request, it must be written in English
+If you include a `prompt` parameter in your request, it must be written in English.
 
 <br/>
 
