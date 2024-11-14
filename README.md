@@ -28,6 +28,7 @@ ___
         - [Configure text generation](#Configure-text-generation)
     - [Vision](#Vision)
         - [Supported Model](#Supported-Model)
+        - [How to use vision](#How-to-use-vision)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -441,6 +442,7 @@ Here’s an example showing how to modify several of these options.
       Params.Stream(True);
       Params.Temperature(0.2);
       Params.PresencePenalty(1.6);
+      Params.MaxToken(640);
     end,
     function : TAsynChatStream
     begin
@@ -463,6 +465,60 @@ The Groq API provides rapid inference and low latency for multimodal models with
 Groq API supports robust multimodal models that integrate seamlessly into applications, delivering fast and precise image processing for tasks such as visual question answering, caption creation, and Optical Character Recognition (OCR).
 
 See the [official documentation](https://console.groq.com/docs/vision#supported-model).
+
+<br/>
+
+### How to use vision
+
+Example of asynchronous vision using a base64-encoded image
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  var Ref := 'Z:\My_Folder\Images\Images01.jpg';
+
+  GroqCloud.Chat.AsynCreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama-3.2-11b-vision-preview');
+      Params.Messages([TPayload.User('Describe the image', [Ref])]);
+      Params.Stream(True);
+      Params.Temperature(1);
+      Params.MaxToken(1024);
+      Params.TopP(1);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := Memo1;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+```
+
+Example of an asynchronous visual display using an image URL
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  var Ref := 'https://www.toureiffel.paris/themes/custom/tour_eiffel/build/images/home-discover-bg.jpg';
+
+  GroqCloud.Chat.AsynCreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama-3.2-90b-vision-preview');
+      Params.Messages([TPayload.User('What''s in this image?', [Ref])]);
+      Params.Stream(True);
+      Params.Temperature(0.3);
+      Params.MaxToken(1024);
+      Params.TopP(1);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := Memo1;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+```
 
 <br/>
 
