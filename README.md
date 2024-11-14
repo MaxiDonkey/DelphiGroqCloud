@@ -426,6 +426,28 @@ Every prompt sent to the model comes with settings that determine how responses 
 
 Here’s an example showing how to modify several of these options.
 
+```Pascal
+// uses Groq, Groq.Chat;
+
+  GroqCloud.Chat.AsynCreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Model('llama-3.1-8b-instant');
+      Params.Messages([
+        TPayload.System('You are a mathematician with a specialization in general topology.'),
+        TPayload.User('In a discrete topology, do accumulation points exist?') ]);
+      Params.Stream(True);
+      Params.Temperature(0.2);
+      Params.PresencePenalty(1.6);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := Memo1;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+```
+
 <br/>
 
 # Contributing
