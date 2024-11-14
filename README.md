@@ -624,6 +624,8 @@ File uploads are currently limited to **25 MB** and the following input file typ
     end);
 ```
 
+An optional text to guide the model's style or continue a previous audio segment. The `prompt` should match the audio language.
+
 <br/>
 
 ### Translation code example
