@@ -29,7 +29,7 @@ ___
     - [Vision](#Vision)
         - [Supported Model](#Supported-Model)
         - [How to use vision](#How-to-use-vision)
-            - [Asynchronous vision using a base64-encoded image](#Asynchronous-vision-using-a-base64-encoded image)
+            - [Asynchronous vision using a base64-encoded image](#Asynchronous-vision-using-a-base64-encoded-image)
             - [Asynchronous vision using an image URL](#Asynchronous-vision-using-an-image-URL)
 - [Contributing](#contributing)
 - [License](#license)
