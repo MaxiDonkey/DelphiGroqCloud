@@ -66,9 +66,9 @@ Due to the fact that there can be many parameters and not all of them are requir
 >[!Warning]
 > To use the examples provided in this tutorial, especially to work with asynchronous methods, I recommend defining the Gemini interface with the widest possible scope.
 ><br/>
-> So, set `GroqCloud := TGroqFactory.CreateInstance(My_Key);` in the `OnCreate` event of your application.
+> So, set `GroqCloud := TGroqFactory.CreateInstance(API_KEY);` in the `OnCreate` event of your application.
 ><br/> 
->Where GroqCloud: IGroq
+>Where `GroqCloud: IGroq`
 
 <br/>
 
