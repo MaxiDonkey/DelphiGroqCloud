@@ -21,6 +21,7 @@ ___
              - [Synchronously text generation example](#Synchronously-text-generation-example)
              - [Asynchronously text generation example](#Asynchronously-text-generation-example)
         - [Stream chat](#Stream-chat)
+             - [Synchronously chat stream](#Synchronously-chat-stream) 
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -261,6 +262,60 @@ In the examples below, we'll use the `Display` procedures to make things simpler
 <br/>
 
 ### Stream chat
+
+#### Synchronously chat stream
+
+In the examples below, we'll use the `Display` procedures to make things simpler.
+>[!TIP]
+>```Pascal
+>procedure DisplayStream(Sender: TObject; Value: string);
+>begin
+>  var M := Sender as TMemo;
+>  for var index := 1 to Value.Length  do
+>    if Value.Substring(index).StartsWith(#10) or
+>       Value.Substring(index).StartsWith(#13)
+>      then
+>        begin
+>          M.Lines.Text := M.Text + sLineBreak;
+>          M.Perform(WM_VSCROLL, SB_BOTTOM, 0);
+>        end
+>      else
+>        begin
+>          M.Lines.BeginUpdate;
+>          try
+>            M.Lines.Text := M.Text + Value[index];
+>            M.Perform(WM_VSCROLL, SB_BOTTOM, 0);
+>          finally
+>            M.Lines.EndUpdate;
+>          end;
+>        end;
+>end;
+>```
+>
+>```Pascal
+>procedure DisplayStream(Sender: TObject; Chat: TChat); overload;
+>begin
+>  for var Item in Chat.Choices do
+>    DisplayStream(Sender, Item.Delta.Content);
+>end;
+>```
+
+```Pascal
+// uses Groq, Groq.Chat;
+
+  GroqCloud.Chat.CreateStream(
+    procedure (Params: TChatParams)
+    begin
+      Params.Messages([TPayload.User('How did we come to develop thermodynamics?')]);
+      Params.Model('llama3-70b-8192');
+      Params.Stream(True);
+    end,
+    procedure (var Chat: TChat; IsDone: Boolean; var Cancel: Boolean)
+    begin
+      if Assigned(Chat) then
+        DisplayStream(Memo1, Chat);
+    end);
+```
 
 <br/>
 
