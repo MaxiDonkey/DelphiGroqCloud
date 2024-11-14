@@ -18,6 +18,7 @@ ___
     - [Embeddings](#Embeddings)
     - [Text generation](#Text-generation)
         - [Chat Completion](#Chat-Completion)
+             - [Synchronously text generation example](#Synchronously-text-generation-example)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -184,7 +185,7 @@ If JSON generation fails, `Groq` will respond with a **400 error**, specifying `
 > We will use only Meta models in all the examples provided for text generation.
 >
 
-1. **Generation Synchronously text example :**
+#### Synchronously text generation example
 
 The `GroqCloud` API allows for text generation using various inputs, like text and images. It's versatile and can support a wide array of applications, including: <br/>
 
