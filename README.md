@@ -25,6 +25,7 @@ ___
              - [Asynchronously chat stream](#Asynchronously-chat-stream) 
         - [Build an interactive chat](#Build-an-interactive-chat)
         - [System instructions](#System-instructions)
+        - [Configure text generation](#Configure-text-generation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -416,6 +417,14 @@ These instructions can be set during model initialization and will remain active
 >[!CAUTION]
 > System instructions help the model follow directions, but they don't completely prevent jailbreaks or information leaks. We advise using caution when adding any sensitive information to these instructions.
 >
+
+<br/>
+
+### Configure text generation
+
+Every prompt sent to the model comes with settings that determine how responses are generated. You have the option to adjust [these settings](https://console.groq.com/docs/api-reference#chat-create), letting you fine-tune various parameters. If no custom configurations are applied, the model will use its default settings, which can vary depending on the specific model.
+
+Here’s an example showing how to modify several of these options.
 
 <br/>
 
