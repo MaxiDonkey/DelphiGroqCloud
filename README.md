@@ -26,6 +26,8 @@ ___
         - [Build an interactive chat](#Build-an-interactive-chat)
         - [System instructions](#System-instructions)
         - [Configure text generation](#Configure-text-generation)
+    - [Vision](#Vision)
+        - [Supported Model](#Supported-Model)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -447,6 +449,20 @@ Here’s an example showing how to modify several of these options.
       Result.OnError := DisplayStream;
     end);
 ```
+
+<br/>
+
+## Vision
+
+The Groq API provides rapid inference and low latency for multimodal models with vision capabilities, enabling the comprehension and interpretation of visual data from images. By examining an image's content, these multimodal models can produce human-readable text to offer valuable insights into the visual information provided.
+
+<br/>
+
+### Supported Model
+
+Groq API supports robust multimodal models that integrate seamlessly into applications, delivering fast and precise image processing for tasks such as visual question answering, caption creation, and Optical Character Recognition (OCR).
+
+See the [official documentation](https://console.groq.com/docs/vision#supported-model).
 
 <br/>
 
