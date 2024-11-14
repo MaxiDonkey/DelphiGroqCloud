@@ -44,7 +44,7 @@ ___
         - [How to create a tool](#How-to-create-a-tool)
     - [Content moderation](#Content-moderation)
     - [Fine-tuning](#Fine-tuning)
-    - [Methods for the tutorial display](#Methods-for-the-tutorial-display)
+    - [Display methods for the tutorial ](#Display-methods-for-the-tutorial )
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -815,7 +815,7 @@ The `Groq.Safety.pas` unit provides frameworks and tools for categorizing and ma
 
 <br/>
 
-## Methods for the tutorial display
+## Display methods for the tutorial 
 
 >[!TIP]
 >```Pascal
