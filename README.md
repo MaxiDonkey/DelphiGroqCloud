@@ -549,7 +549,7 @@ The llama-3.2-90b-vision-preview and llama-3.2-11b-vision-preview models now sup
     procedure (Params: TChatParams)
     begin
       Params.Model('llama-3.2-90b-vision-preview');
-      Params.Messages([TPayload.User('List what you observe in this photo in JSON format.?', [Ref])]);
+      Params.Messages([TPayload.User('List what you observe in this photo in JSON format?', [Ref])]);
       Params.Temperature(1);
       Params.MaxToken(1024);
       Params.TopP(1);
