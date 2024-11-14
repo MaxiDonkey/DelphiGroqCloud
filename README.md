@@ -29,6 +29,8 @@ ___
     - [Vision](#Vision)
         - [Supported Model](#Supported-Model)
         - [How to use vision](#How-to-use-vision)
+            - [Asynchronous vision using a base64-encoded image](#Asynchronous-vision-using-a-base64-encoded image)
+            - [Asynchronous vision using an image URL](#Asynchronous-vision-using-an-image-URL)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -286,8 +288,7 @@ In the examples below, we'll use the `Display` procedures to make things simpler
 >begin
 >  var M := Sender as TMemo;
 >  for var index := 1 to Value.Length  do
->    if Value.Substring(index).StartsWith(#10) or
->       Value.Substring(index).StartsWith(#13)
+>    if Value.Substring(index).StartsWith(#13)
 >      then
 >        begin
 >          M.Lines.Text := M.Text + sLineBreak;
@@ -310,7 +311,11 @@ In the examples below, we'll use the `Display` procedures to make things simpler
 >procedure DisplayStream(Sender: TObject; Chat: TChat); overload;
 >begin
 >  for var Item in Chat.Choices do
->    DisplayStream(Sender, Item.Delta.Content);
+>    if Assigned(Item.Delta) then
+>      DisplayStream(Sender, Item.Delta.Content)
+>    else
+>    if Assigned(Item.Message) then
+>      DisplayStream(Sender, Item.Message.Content);
 >end;
 >```
 
@@ -477,7 +482,7 @@ See the [official documentation](https://console.groq.com/docs/vision#supported-
 
 ### How to use vision
 
-Example of asynchronous vision using a base64-encoded image
+#### Asynchronous vision using a base64-encoded image
 
 ```Pascal
 // uses Groq, Groq.Chat;
@@ -502,7 +507,7 @@ Example of asynchronous vision using a base64-encoded image
     end);
 ```
 
-Example of an asynchronous visual display using an image URL
+#### Asynchronous vision using an image URL
 
 ```Pascal
 // uses Groq, Groq.Chat;
