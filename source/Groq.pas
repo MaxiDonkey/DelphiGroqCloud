@@ -32,7 +32,7 @@ type
   /// <seealso cref="TGroq"/>
   /// </remarks>
   IGroq = interface
-    ['{7E69221E-3C24-4B38-9AE9-894714CA9A47}']
+    ['{6C323A77-2CD8-429B-BAA3-871CFF307C90}']
     function GetAPI: TGroqAPI;
     procedure SetToken(const Value: string);
     function GetToken: string;
