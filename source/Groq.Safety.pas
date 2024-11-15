@@ -18,19 +18,19 @@ type
   /// </summary>
   THarmCategory = (
     /// <summary>
-    /// Non-Violent Crimes
+    /// Violent Crimes
     /// </summary>
     S1,
     /// <summary>
-    /// Sex-Related Crimes
+    /// Non-Violent Crimes
     /// </summary>
     S2,
     /// <summary>
-    /// Child Sexual Exploitation
+    /// Sex-Related Crimes
     /// </summary>
     S3,
     /// <summary>
-    /// Defamation
+    /// Child Sexual Exploitation
     /// </summary>
     S4,
     /// <summary>
