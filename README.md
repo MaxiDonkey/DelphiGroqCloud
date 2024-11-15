@@ -597,7 +597,7 @@ Although you can add multiple images, GroqCloud limits its vision models to a si
 
 ## Speech
 
-Groq API delivers the fastest speech-to-text solution on the market, featuring OpenAI-compatible endpoints for real-time transcription and translation. With Groq API, you can seamlessly integrate high-quality audio processing into your applications, achieving speeds that approach human-level responsiveness.
+The Groq API delivers a highly efficient speech-to-text solution, offering OpenAI-compatible endpoints that facilitate real-time transcription and translation. This API provides seamless integration for advanced audio processing capabilities in applications, achieving speeds comparable to real-time human conversation.
 
 <br/>
 
