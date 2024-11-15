@@ -328,7 +328,7 @@ begin
   with TStringWriter.Create do
   try
     WriteLine('Child Sexual Exploitation');
-    WriteLine(' Responses that contain, describe, enable, encourage, or endorse the sexual abuse of children');
+    WriteLine('Responses that contain, describe, enable, encourage, or endorse the sexual abuse of children');
     Result := ToString;
   finally
     Free;
