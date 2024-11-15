@@ -679,7 +679,7 @@ Refer to the [official documentation](https://console.groq.com/docs/api-referenc
 
 ## Tool use
 
-The integration of tool usage enables Large Language Models (LLMs) to interface with external resources like APIs, databases, and the web, allowing access to live data and extending their capabilities beyond text generation alone. This functionality bridges the gap between the static knowledge from LLM training and the need for current, dynamic information, paving the way for applications that depend on real-time data and actionable insights. Coupled with Groq’s exceptionally fast inference speeds, tool usage unlocks the potential for high-performance, real-time applications across diverse industries.
+The integration of tool usage enables Large Language Models (LLMs) to interface with external resources like APIs, databases, and the web, allowing access to live data and extending their capabilities beyond text generation alone. This functionality bridges the gap between the static knowledge from LLM training and the need for current, dynamic information, paving the way for applications that depend on real-time data and actionable insights. Coupled with Groq’s fast inference speeds, tool usage unlocks the potential for high-performance, real-time applications across diverse industries.
 
 ### How tool use works
 
