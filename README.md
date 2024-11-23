@@ -10,8 +10,8 @@ ___
 
 - [Introduction](#Introduction)
 - [Groq cloud console](#Groq-cloud-console)
-    - [Get a key](Get-a-key)
-    - [Settings](Settings)
+    - [Get a key](#Get-a-key)
+    - [Settings](#Settings)
 - [Usage](#Usage)
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
     - [Groq models overview](#Groq-models-overview)
