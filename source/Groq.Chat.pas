@@ -1426,7 +1426,7 @@ type
     /// <remarks>
     /// This procedure initiates an asynchronous request to generate a chat completion based on the provided parameters. The response or error is handled by the provided callBacks.
     /// <code>
-    /// // WARNING - Move the following line into the main OnCreate
+    /// // WARNING - Move the following line to the main OnCreate method for maximum scope.
     /// //var GroqCloud := TGroqFactory.CreateInstance(BaererKey);
     /// GroqCloud.Chat.AsynCreate(
     ///   procedure (Params: TChatParams)

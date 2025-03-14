@@ -177,7 +177,7 @@ begin
       Stream.Position := 0;
       Result := Client.Post(GetRequestURL(Path), Stream, Response, Headers).StatusCode;
     finally
-      Client.OnReceiveData := nil;
+      Client.ReceiveDataCallBack := nil;
       Stream.Free;
     end;
   finally
@@ -261,7 +261,7 @@ begin
           end;
         end;
       finally
-        Client.OnReceiveData := nil;
+        Client.ReceiveDataCallBack := nil;
         Stream.Free;
       end;
     finally
